@@ -13,6 +13,8 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from logging import PlaceHolder
+from turtle import update
 from django.contrib import admin
 from django.urls import path
 from todo.views import DeleteTodo, EditTodo, TodoAppView, AddTodo, UpdateTodoItem
@@ -24,5 +26,8 @@ urlpatterns = [
     # Delete todo
     path("todo/<int:item_id>/delete", DeleteTodo, name="deleteTodo"),
     # Edit todo
+    path("todo/<int:item_id>/edit",EditTodo,name=PlaceHolder),
     # Update todo
+    path("todo/<int:item_id>/update",UpdateTodoItem, name=PlaceHolder),
 ]
+
